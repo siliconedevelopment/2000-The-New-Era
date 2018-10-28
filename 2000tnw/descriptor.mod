@@ -1,0 +1,18 @@
+name="Millennium Dawn: Modern Day Mod"
+archive="millennium_dawn.zip"
+replace_path="history/countries"
+tags={
+	"Alternative History"
+	"Balance"
+	"Events"
+	"Fixes"
+	"Gameplay"
+	"Historical"
+	"Map"
+	"Military"
+	"National Focuses"
+	"Technologies"
+	"Utilities"
+}
+remote_file_id="719416488"
+supported_version="1.5.*"

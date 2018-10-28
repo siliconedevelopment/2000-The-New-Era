@@ -1,0 +1,129 @@
+add_namespace = chechen
+
+country_event = {
+	id = chechen.1
+	title = "Krasnodar Agreement"
+	desc = "The Krasnodar Agreement was set up in order to keep the peace, it also allows us to capture some very important cities, like Makhachkala and Tskhinvali. However, it has removed our right to conduct sharia law in our own territory, and create a heathenness democracy. And the territories of Daghistan and 'Uwsitia are demilitarized"
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = "Not the best deal, but good to let us build up our strength"
+		CHE = {
+			transfer_state = 232
+			transfer_state = 77
+			transfer_state = 919
+		}
+		232 = { 
+			set_demilitarized_zone = yes 
+			set_state_name = "Daghistan"
+		}
+		797 = { 
+			set_demilitarized_zone = yes
+			set_state_name = "'Uwsitia"
+		}
+		set_politics = {
+			islamist = {
+				popularity = 27.3
+			}
+			nationalist = {
+				popularity = 2.7
+			}
+			communist = {
+				popularity = 10
+			}
+			social_liberal = {
+				popularity = 12.5
+			}
+			social_democrat = {
+				popularity = 7.5
+			}
+			democratic_socialist = {
+				popularity = 13
+			}
+			monarchist = {
+				popularity = 27
+			}
+			reactionary = {
+				popularity = 20
+			}
+			ruling_party = islamist
+			elections_allowed = yes
+			election_frequency = 120
+		}
+		hold_election = ROOT
+	}
+}
+
+country_event = {
+	id = chechen.12
+	title = "South Ossetian Seperatists!"
+	desc = "After we took our rightful Ossetian land. The Russian-Ossetian Liberation Force has took over the regional capital of Tskhinvali, the ROLF forced the regional government to lend control to the paramilitary, and now the paramilitary have occupied 1/2 of Tskhinvali, and 6/7 of the rest of Ossetia. Declaring war on the rebellious government will violate the Krasnodar Agreement, however fighting it would show off the strength of Chechnya."
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	triggered = {
+		tag = CHE
+		date > 2001.1.1
+		date < 2002.1.1
+		controls_state = 232
+		controls_state = 797
+		has_government = islamist
+	}
+	
+	option = {
+		ai_chance = {
+			factor = 71
+		}
+		name = "Destroy the heathen Ossetians!"
+		SOS = {
+			transfer_state = 797
+		}
+		declare_war_on = {
+			target = SOS
+			type = annex_everything
+		}
+		SOS = {
+			set_politics = {
+				communist = {
+					popularity = 91
+				}
+				islamist = {
+					popularity = 3
+				}
+				social_democrat = {
+					popularity = 6
+				}
+				elections_allowed = yes
+				election_frequency = 12
+			}
+			load_oob = "SOS_2000"
+		}
+	}
+	option = {
+		ai_chance = {
+			factor = 21
+		}
+
+		name = "We should respect the Krasnodar Agreement."
+		SOS = {
+			transfer_state = 797
+		}
+		SOS = {
+			set_politics = {
+				communist = {
+					popularity = 91
+				}
+				islamist = {
+					popularity = 0.5
+				}
+				social_democrat = {
+					popularity = 8.5
+				}
+				elections_allowed = yes
+				election_frequency = 12
+			}
+			load_oob = "SOS_2000"
+		}
+	}
+}

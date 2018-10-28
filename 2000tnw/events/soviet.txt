@@ -1,0 +1,180 @@
+add_namespace = soviet
+
+country_event = {
+	id = soviet.0
+	title = "Breakup of the USSR"
+	desc = "Following the leader's failed policies. The soviet republic's leaders have started to follow the idea of nationalism. The Gorbachevite experiment failed, as well as communism as a whole."
+	is_triggered_only = yes
+	fire_only_once = yes
+	trigger = {
+		has_stability < 0.2
+		has_war_support < 0.3
+		tag = SOV
+	}
+	option = {
+		name = "Oh dear!"
+		add_stability = -0.05
+		add_war_support = -0.10
+		hidden_effect = {
+			country_event = { id = breakup_of_ussr.1 hours = 72 }
+		}
+	}
+	
+}
+country_event = {
+	id = soviet.1
+	title = "2000 Soviet Elections"
+	desc = "Free elections first started after Gorbachev's reforms in 1989, the CPSU and the other parties have contested, but due to the popularity of the CPSU, for the past 2 elections the CPSU has won. The National Bolsheviks have strong grasp on the more younger voters, whilst the CPSU has a strong grasp with the older voters, with the minority parties somewhere in between. Will the Soviet Union elect another party, or stay with the status quo?"
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	immediate = {
+		hold_election = ROOT
+	}
+	option = {
+		ai_chance = {
+			factor = 75
+		}
+		name = "The CPSU wins!"
+		add_popularity = {
+			ideology = communist
+			popularity = 0.03
+		}
+	}
+	option = {
+		ai_chance = {
+			factor = 23
+		}
+		name = "The National Bolsheviks win the elections!"
+		add_popularity = {
+			ideology = nationalist
+			popularity = 0.05
+		}
+		add_popularity = {
+			ideology = reactionary
+			popularity = 0.14
+		}
+		set_politics = {
+			ruling_party = nationalist
+			elections_allowed = yes
+		}
+		country_event = { id = soviet.2 hours = 240 }
+	}
+	option = {
+		ai_chance = {
+			factor = 2
+		}
+		name = "The SPS wins!"
+		add_popularity = {
+			ideology = conservative
+			popularity = 0.35
+		}
+		set_politics = {
+			ruling_party = conservative
+		}
+	}
+}
+
+country_event = {
+	id = soviet.2
+	title = "2000 National Bolsheviks Leadership Elections"
+	desc = "Soon after the elections, the National Bolsheviks' leadership have been competing for power. The old decades long rivalry with Putin and Zhirinovsky has reached into some political ceasefire until now, where a new savvy individual called Andrey Savelyev - former KGB agent - has xtarted running for leadership. Will the national bolsheviks keep hold of their power - and properly elect a leader - over the Union or disintegrate into a mess of constitutial violations and political chaos?"
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		ai_chance = {
+			factor = 47
+		}
+		name = "Andrey Savelyev wins!"
+		add_popularity = {
+			ideology = nationalist
+			popularity = 0.05
+		}
+		add_popularity = {
+			ideology = reactionary
+			popularity = -0.10
+		}
+		set_politics = {
+			elections_allowed = no
+		}
+		create_country_leader = {
+			name = "Andrey Savelyev"
+			picture = "Andrey_Savelyev.dds"
+			ideology = national_bolshevik
+		}
+		set_global_flag = SOV_andrey
+	}
+	option = {
+		ai_chance = {
+			factor = 47
+		}
+		name = "Zhirinovsky win the elections!"
+		add_popularity = {
+			ideology = nationalist
+			popularity = 0.05
+		}
+		add_popularity = {
+			ideology = reactionary
+			popularity = -1
+		}
+		set_global_flag = SOV_Zhirinovsky
+	}
+	option = {
+		ai_chance = {
+			factor = 6
+		}
+		name = "Putin wins!"
+		add_popularity = {
+			ideology = reactionary
+			popularity = 0.25
+		}
+		set_politics = {
+			ruling_party = reactionary
+		}
+		set_global_flag = SOV_Putin
+	}
+}
+country_event = {
+	id = soviet.3
+	title = "Ceasefire with the Chechens?"
+	desc = "The Chechens have put up a tough fight. Shall we create a ceasefire with the Chechens and eventually reach a bilateral agreement, or shall we continue the war?"
+	is_triggered_only = yes
+	fire_only_once = yes
+	trigger = {
+		date > 2000.2.1
+		NOT = {
+			has_government = nationalist
+			has_global_flag = SOV_andrey
+			has_global_flag = SOV_Putin
+			has_global_flag = SOV_Zhirinovsky
+		}
+		tag = SOV
+		CHE = {
+			controls_state = 797
+			controls_state = 232
+		}
+		casualties > 100
+	}
+	option = {
+		ai_chance = {
+			factor = 10
+		}
+		name = "Whoever thought of this must be shot!"
+		add_stability = -0.05
+		add_war_support = -0.05
+	}
+	option = {
+		ai_chance = {
+			factor = 90
+		}
+		name = "Call a ceasefire!"
+		add_stability = 0.05
+		add_war_support = -0.10
+		white_peace = CHE
+		CHE = {
+			country_event = { id = chechen.1 }
+		}
+	}
+	
+}

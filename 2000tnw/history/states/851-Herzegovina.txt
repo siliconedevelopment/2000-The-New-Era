@@ -1,0 +1,20 @@
+state={
+	id=851
+	name="STATE_851"
+	provinces={
+		6942 9894 
+	}
+	history = {
+		owner = SER
+		add_core_of = SER
+		add_core_of = CRO
+		add_core_of = BOS
+		buildings = {
+			infrastructure = 4
+		}
+	}
+	manpower=310000
+	buildings_max_level_factor=1.000
+	
+	state_category = state_level_5
+}

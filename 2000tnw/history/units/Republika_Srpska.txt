@@ -1,0 +1,71 @@
+division_template = {
+	name = "Српска ослободилачка војска Босне"
+	
+	regiments = {
+		motorized = { x = 0 y = 0 }
+		motorized = { x = 0 y = 1 }
+		motorized = { x = 0 y = 2 }
+	}
+	support = {
+		recon = { x = 0 y = 0 }
+	}
+}
+
+
+units = {
+	
+	division = {
+		name = "1. Српска ослободилачка војска Босне"
+		division_template = "Српска ослободилачка војска Босне"
+		location = 9894
+		start_experience_factor = 0.1
+	}
+	division = {
+		name = "2. Српска ослободилачка војска Босне"
+		division_template = "Српска ослободилачка војска Босне"
+		location = 6799
+		start_experience_factor = 0.1
+	}
+	division = {
+		name = "3. Српска ослободилачка војска Босне"
+		division_template = "Српска ослободилачка војска Босне"
+		location = 6614
+		start_experience_factor = 0
+	}
+	division = {
+		name = "4. Српска ослободилачка војска Босне"
+		division_template = "Српска ослободилачка војска Босне"
+		location = 11872
+		start_experience_factor = 0.1
+	}
+	division = {
+		name = "5. Српска ослободилачка војска Босне"
+		division_template = "Српска ослободилачка војска Босне"
+		location = 9922
+		start_experience_factor = 0.1
+	}
+	division = {
+		name = "6. Српска ослободилачка војска Босне"
+		division_template = "Српска ослободилачка војска Босне"
+		location = 11872
+		start_experience_factor = 0.1
+	}
+	division = {
+		name = "7. Српска ослободилачка војска Босне"
+		division_template = "Српска ослободилачка војска Босне"
+		location = 9922
+		start_experience_factor = 0.1
+	}
+	division = {
+		name = "8. Српска ослободилачка војска Босне"
+		division_template = "Српска ослободилачка војска Босне"
+		location = 11872
+		start_experience_factor = 0.1
+	}
+	division = {
+		name = "9. Српска ослободилачка војска Босне"
+		division_template = "Српска ослободилачка војска Босне"
+		location = 6672
+		start_experience_factor = 0.1
+	}
+}

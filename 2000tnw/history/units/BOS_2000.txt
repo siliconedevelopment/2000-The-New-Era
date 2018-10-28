@@ -1,0 +1,85 @@
+﻿division_template = {
+	name = "Muslimana i Vojske Slobode Nezavisnosti BiH"
+	
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+	}
+	support = {
+		recon = { x = 0 y = 0 }
+	}
+}
+
+
+units = {
+	
+	division = {
+		name = "1. Muslimana i Vojske Slobode Nezavisnosti BiH"
+		division_template = "Muslimana i Vojske Slobode Nezavisnosti BiH"
+		location = 9894
+		start_experience_factor = 0.7
+	}
+	division = {
+		name = "2. Muslimana i Vojske Slobode Nezavisnosti BiH"
+		division_template = "Muslimana i Vojske Slobode Nezavisnosti BiH"
+		location = 6799
+		start_experience_factor = 0.3
+	}
+	division = {
+		name = "3. Muslimana i Vojske Slobode Nezavisnosti BiH"
+		division_template = "Muslimana i Vojske Slobode Nezavisnosti BiH"
+		location = 11899
+		start_experience_factor = 0.3
+	}
+	division = {
+	is			name = "4. Muslimana i Vojske Slobode Nezavisnosti BiH"
+divion_template = "Muslimana i Vojske Slobode Nezavisnosti BiH"
+		location = 11899
+		start_experience_factor = 0.3
+	}
+	division = {
+		name = "5. Muslimana i Vojske Slobode Nezavisnosti BiH"
+		division_template = "Muslimana i Vojske Slobode Nezavisnosti BiH"
+		location = 11899
+		start_experience_factor = 0.3
+	}
+	division = {
+		name = "6. Muslimana i Vojske Slobode Nezavisnosti BiH"
+		division_template = "Muslimana i Vojske Slobode Nezavisnosti BiH"
+		location = 11899
+		start_experience_factor = 0.3
+	}
+	division = {
+		name = "7. Muslimana i Vojske Slobode Nezavisnosti BiH"
+		division_template = "Muslimana i Vojske Slobode Nezavisnosti BiH"
+		location = 6799
+		start_experience_factor = 0.3
+	}
+	division = {
+		name = "8. Muslimana i Vojske Slobode Nezavisnosti BiH"
+		division_template = "Muslimana i Vojske Slobode Nezavisnosti BiH"
+		location = 11899
+		start_experience_factor = 0.3
+	}
+	division = {
+		name = "9. Muslimana i Vojske Slobode Nezavisnosti BiH"
+		division_template = "Muslimana i Vojske Slobode Nezavisnosti BiH"
+		location = 11899
+		start_experience_factor = 0.3
+	}
+	division = {
+		name = "10. Muslimana i Vojske Slobode Nezavisnosti BiH"
+		division_template = "Muslimana i Vojske Slobode Nezavisnosti BiH"
+		location = 11899
+		start_experience_factor = 0.3
+	}
+	division = {
+		name = "11. Muslimana i Vojske Slobode Nezavisnosti BiH"
+		division_template = "Muslimana i Vojske Slobode Nezavisnosti BiH"
+		location = 11899
+		start_experience_factor = 0.3
+	}
+}
+
+### Air OOB ###

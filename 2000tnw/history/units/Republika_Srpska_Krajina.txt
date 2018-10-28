@@ -1,0 +1,89 @@
+division_template = {
+	name = "Serbian Army of Krajina"
+	
+	regiments = {
+		motorized = { x = 0 y = 0 }
+		motorized = { x = 0 y = 1 }
+		motorized = { x = 0 y = 2 }
+	}
+	support = {
+		recon = { x = 0 y = 0 }
+	}
+}
+
+
+units = {
+	
+	division = {
+		name = "1. Serbian Army of Krajina"
+		division_template = "Serbian Army of Krajina"
+		location = 624
+		start_experience_factor = 0.1
+	}
+	division = {
+		name = "2. Serbian Army of Krajina"
+		division_template = "Serbian Army of Krajina"
+		location = 3627
+		start_experience_factor = 0.1
+	}
+	division = {
+		name = "3. Serbian Army of Krajina"
+		division_template = "Serbian Army of Krajina"
+		location = 9595
+		start_experience_factor = 0
+	}
+	division = {
+		name = "4. Serbian Army of Krajina"
+		division_template = "Serbian Army of Krajina"
+		location = 11577
+		start_experience_factor = 0.1
+	}
+	division = {
+		name = "5. Serbian Army of Krajina"
+		division_template = "Serbian Army of Krajina"
+		location = 11594
+		start_experience_factor = 0.1
+	}
+	division = {
+		name = "6. Serbian Army of Krajina"
+		division_template = "Serbian Army of Krajina"
+		location = 6672
+		start_experience_factor = 0.1
+	}
+	division = {
+		name = "7. Serbian Army of Krajina"
+		division_template = "Serbian Army of Krajina"
+		location = 3627
+		start_experience_factor = 0.1
+	}
+	division = {
+		name = "8. Serbian Army of Krajina"
+		division_template = "Serbian Army of Krajina"
+		location = 13258
+		start_experience_factor = 0
+	}
+	division = {
+		name = "9. Serbian Army of Krajina"
+		division_template = "Serbian Army of Krajina"
+		location = 9611
+		start_experience_factor = 0.1
+	}
+	division = {
+		name = "10. Serbian Army of Krajina"
+		division_template = "Serbian Army of Krajina"
+		location = 11577
+		start_experience_factor = 0.1
+	}
+	division = {
+		name = "11. Serbian Army of Krajina"
+		division_template = "Serbian Army of Krajina"
+		location = 13258
+		start_experience_factor = 0.1
+	}
+	division = {
+		name = "12. Serbian Army of Krajina"
+		division_template = "Serbian Army of Krajina"
+		location = 13258
+		start_experience_factor = 0.1
+	}
+}

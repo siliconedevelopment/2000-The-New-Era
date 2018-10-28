@@ -1,0 +1,228 @@
+add_namespace = breakup_of_ussr
+add_namespace = moldovantransnistrianwar_optionone
+add_namespace = moldovantransnistrianwar_optionthree
+
+
+country_event = {
+	id = breakup_of_ussr.1
+	title = "Moldova invades Transnistria!"
+	desc = "The moldovan military has invaded Transnistria, with no justification. We could go to war, however the Ukrainian SSR may retaliate.."
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		ai_chance = {
+			factor = 50
+		}
+		name = "Send supplies and equipment over to Transnistria"
+		add_stability = 0.01
+		857 = { set_border_war = yes }
+		hidden_effect = { 
+			random_list = {
+				75 = { country_event = { id = moldovantransnistrianwar_optionone.1 hours = 372 } }
+				25 = { country_event = { id = moldovantransnistrianwar_optionone.2 hours = 372 } }
+			}
+		}
+	}
+	option = {
+		ai_chance = {
+			factor = 45
+		}
+		name = "Declare war on the Moldovans!"
+		857 = { set_border_war = yes }
+		declare_war_on = {
+			target = MDV
+			type = puppet
+		}
+		add_stability = -0.10
+		add_war_support = 0.10
+		hidden_effect = {
+			country_event = { id = breakup_of_ussr.2 hours = 123 }
+		}
+	}
+	option = {
+		ai_chance = {
+			factor = 5
+		}
+		name = "Do nothing!"
+		857 = { set_border_war = yes }
+		add_stability = 0.10
+		add_war_support = -0.10
+		hidden_effect = {
+			country_event = { id = moldovantransnistrianwar_optionthree.1 hours = 123 }
+		}
+	}
+}
+
+country_event = {
+	id = breakup_of_ussr.2
+	title = "The Ukrainian SSR has declared unilateral independence!"
+	desc = "The UkrSSR has retaliated after we declared war on Moldova, the invading armies are trapped in Transnistria, what do we do?"
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		ai_chance = {
+			factor = 50
+		}
+		name = "Negiotiate a treaty with Moldova, and a military access deal with Ukraine"
+		add_stability = -0.05
+		add_war_support = -0.10
+		white_peace = MDV
+		if = {
+			limit = {
+				ROM ={
+					has_war_with = SOV
+				}
+			}
+			white_peace = ROM
+		}
+		release = UKR
+		UKR = {
+			load_oob = "UKR_2000"
+		}
+		release_puppet = TRA
+		MDV = {
+			puppet = TRA
+			transfer_state = 857
+		}
+		UKR = {
+			give_military_access = SOV
+		}
+	}
+	option = {
+		ai_chance = {
+			factor = 50
+		}
+		name = "Declare war on the Ukrainians!"
+		declare_war_on = {
+			target = UKR
+			type = annex_everything
+		}
+		UKR = {
+			load_oob = "UKR_2000"
+		}
+		add_stability = -0.15
+		add_war_support = 0.10
+		hidden_effect = {
+			country_event = { id = breakup_of_ussr.3 hours = 1000 }
+		}
+	}
+}
+### Moldovan Transnistrian War - Option One ###
+country_event = {
+	id = moldovantransnistrianwar_optionone.1
+	title = "The Moldovans have successfully occupied Transnistria!"
+	desc = "The Moldovans have successfully occupied most of Transnistria, and it's capital of Tiraspol. Should we declare war on them?"
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		MDV = {
+			annex = TRA
+		}
+	}
+	
+	option = {
+		ai_chance = {
+			factor = 50
+		}
+		name = "Negiotiate a treaty with Moldova, giving Transnistria autonomy under a Moldovan Temporary Government."
+		add_stability = 0.15
+		add_war_support = -0.10
+
+		MDV = {
+			transfer_state = 857
+			puppet = TRA
+		}
+	}
+	option = {
+		ai_chance = {
+			factor = 50
+		}
+		name = "Declare war on the Moldovans!"
+		857 = { set_border_war = yes }
+		declare_war_on = {
+			target = MDV
+			type = puppet
+		}
+		add_stability = -0.10
+		add_war_support = 0.10
+		hidden_effect = {
+			country_event = { id = breakup_of_ussr.2 hours = 123 }
+		}
+	}
+}
+
+country_event = {
+	id = moldovantransnistrianwar_optionone.2
+	title = "The Transnistrians have successfully defended their land!"
+	desc = "The Transnistrians have successfully defended every square inch of their land, meaning peace is restored to eastern europe"
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		MDV = {
+			white_peace = TRA
+		}
+	}
+	
+	option = {
+		ai_chance = {
+			factor = 50
+		}
+		name = "Excellent!"
+		857 = { set_border_war = no }
+	}
+}
+### Moldovan-Transnistrian War - Option Three ###
+country_event = {
+	id = moldovantransnistrianwar_optionthree.1
+	title = "The Moldovans have successfully taken back Transnistria"
+	desc = "The Moldovans have successfully occupied most of Transnistria, and it's capital of Tiraspol."
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		MDV = {
+			annex = TRA
+		}
+	}
+	
+	option = {
+		ai_chance = {
+			factor = 50
+		}
+		name = "Well this sucks!"
+		857 = { set_border_war = no }
+		country_event = { id = ukraine_moldovaoptiothree.1 hours = 49 }
+	}
+}
+add_namespace = ukraine_moldovaoptiothree
+country_event = {
+	id = ukraine_moldovaoptiothree.1
+	title = "The Ukrainian SSR has declared unilateral independence!"
+	desc = "The UkrSSR has saw our failure in the Transnistrian war. Now they have took advantage and declared independence. Our only option is war."
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+
+	option = {
+		ai_chance = {
+			factor = 100
+		}
+		name = "Declare war on the Ukrainians!"
+		declare_war_on = {
+			target = UKR
+			type = annex_everything
+		}
+		UKR = {
+			load_oob = "UKR_2000"
+		}
+		add_stability = -0.15
+		add_war_support = 0.10
+		hidden_effect = {
+			country_event = { id = breakup_of_ussr.3 hours = 1000 }
+		}
+	}
+}

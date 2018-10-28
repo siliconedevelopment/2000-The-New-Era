@@ -1,0 +1,194 @@
+﻿add_namespace = bulgaria
+
+country_event = {
+	id = bulgaria.1
+	title = "Bulgarian Nationalist Riots in Vardaska"
+	desc = "There have been riots from the 'Bulgarian Nationalist Party', which 2,000 people had started looting co-operatives and small private businesses, they proclaim for the end of communism in Bulgaria. So what do we do?"
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		ai_chance = {
+			factor = 95
+		}
+		name = "Shoot them down!"
+		add_stability = -0.1
+		country_event = { id = Bulgaria.2 }
+		start_civil_war = {
+			ruling_party = communist
+			ideology = nationalist
+			size = 0.1
+			only_own_territory = no
+			capital = 921
+			states = { 
+				921
+			}
+			keep_unit_leaders = {
+				1 2 3
+			}
+		}
+		random_other_country = {
+			limit = {
+				original_tag = BUL
+				has_government = nationalist
+			}
+			load_oob = "bulgarrebel"
+			set_politics = {
+				communist = {
+					popularity = 12
+				}
+				democratic_socialist = {
+					popularity = 8
+				}
+				nationalist = {
+					popularity = 68
+				}
+				fascist = {
+					popularity = 12
+				}
+			}
+		}
+		set_politics = {
+			nationalist = {
+				popularity = 2
+			}
+			communist = {
+				popularity = 48
+			}
+			democratic_socialist = {
+				popularity = 12
+			}
+			reactionary = {
+				popularity = 10
+			}
+			social_liberal = {
+				popularity = 10
+			}
+			market_liberal = {
+				popularity = 6
+			}
+			conservative = {
+				popularity = 6
+			}
+			islamist = {
+				popularity = 6
+			}
+			elections_allowed = yes
+			last_election = "2000.12.1"
+			election_frequency = 60
+		}
+	}
+	option = {
+		ai_chance = {
+			factor = 5
+		}
+		name = "Rise up!"
+		add_stability = -0.3
+		start_civil_war = {
+			ruling_party = nationalist
+			ideology = communist
+			size = 0.9
+			only_own_territory = no
+			capital = 48
+			states = { 
+				106 77 48 212 211
+			}
+		}
+		load_oob = "bulgarrebel"
+		random_other_country = {
+			limit = {
+				original_tag = BUL
+				has_government = communist
+			}
+			set_politics = {
+				nationalist = {
+					popularity = 2
+				}
+				communist = {
+					popularity = 48
+				}
+				democratic_socialist = {
+					popularity = 12
+				}
+				reactionary = {
+					popularity = 10
+				}
+				social_liberal = {
+					popularity = 10
+				}
+				market_liberal = {
+					popularity = 6
+				}
+				conservative = {
+					popularity = 6
+				}
+				islamist = {
+					popularity = 6
+				}
+				elections_allowed = yes
+				last_election = "2000.12.1"
+				election_frequency = 60
+			}
+			country_event = { id = bulgaria.2 }
+		}
+		set_politics = {
+			communist = {
+				popularity = 12
+			}
+			democratic_socialist = {
+				popularity = 8
+			}
+			nationalist = {
+				popularity = 68
+			}
+			fascist = {
+				popularity = 12
+			}
+		}
+	}
+}
+
+country_event = {
+	id = bulgaria.2
+	title = "Should we get Soviet assistance? "
+	desc = "After the shooting down of the rioters, they have proclaimed the Bulgar-Vardaska Free National Republic. Should we get soviet assistance?"
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		ai_chance = {
+			factor = 95
+		}
+		trigger = {
+			has_government = nationalist
+		}
+		name = "We need all the help we can get!"
+		add_stability = -0.1
+		SOV = {
+			declare_war_on = {
+				target = BUL
+				type = puppet
+			}
+		}
+	}
+	option = {
+		ai_chance = {
+			factor = 95
+		}
+		trigger = {
+			has_government = communist
+		}
+		name = "We need all the help we can get!"
+		add_stability = -0.1
+		random_other_country = {
+			limit = {
+				original_tag = BUL
+				has_government = nationalist
+			}
+			declare_war_on = {
+				target = SOV
+				type = puppet
+			}
+		}
+	}
+}

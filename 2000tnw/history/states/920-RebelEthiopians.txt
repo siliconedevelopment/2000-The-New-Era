@@ -1,0 +1,29 @@
+
+state={
+	id=920
+	name="STATE_920"
+	
+	resources = {
+		steel = 3
+	}
+	
+	history={
+		owner = ETH
+		add_core_of = ETH
+		buildings = {
+			infrastructure = 1
+			industrial_complex = 1
+			arms_factory = 1
+			7890 = { bunker = 9 }
+			8036 = { bunker = 10 }
+		}
+		victory_points = { 7980 1 }
+	}
+
+	provinces={
+		7980 8036
+	}
+	manpower=25500
+	buildings_max_level_factor=1.000
+	state_category = state_level_10
+}

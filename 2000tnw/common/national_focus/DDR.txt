@@ -1,0 +1,331 @@
+focus_tree = {
+	id = DDR
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = DDR
+		}
+	}
+	default = no
+	focus = {
+		id = DDR_the_future_of_the_DDR
+		icon = GFX_goal_generic_dangerous_deal
+		cost = 5.00
+		x = 8
+		y = 1
+			completion_reward = {
+					add_political_power = 100
+				}
+
+	}
+	focus = {
+		id = DDR_seek_reunification
+		icon = GFX_goal_generic_war_with_comintern
+		cost = 10.00
+		prerequisite = {
+			focus = DDR_the_future_of_the_DDR
+		}
+		mutually_exclusive = {
+			focus = DDR_seek_independence
+		}
+		x = 7
+		y = 2
+			completion_reward = {
+					set_politics = {
+							ruling_party = democratic_socialist
+						}
+				}
+
+	}
+	focus = {
+		id = DDR_we_are_the_true_germany
+		icon = GFX_goal_support_communism
+		cost = 10.00
+		prerequisite = {
+			focus = DDR_seek_reunification
+		}
+		mutually_exclusive = {
+			focus = DDR_one_country_two_systems
+			focus = DDR_abandon_socialism
+		}
+		x = 3
+		y = 3
+			completion_reward = {
+					GER = {
+							release_puppet = DDR
+						}
+					declare_war_on = {
+							target = GER
+							type = annex_everything
+						}
+					set_major = yes
+				}
+
+	}
+	focus = {
+		id = DDR_rebuild_the_volksarmee
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = DDR_we_are_the_true_germany
+		}
+		x = 3
+		y = 4
+
+	}
+	focus = {
+		id = DDR_seek_new_alliance_with_soviets
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = DDR_rebuild_the_volksarmee
+		}
+		mutually_exclusive = {
+			focus = DDR_destroy_the_soviet_traitors
+		}
+		completion_reward = {
+			add_to_faction = "Warsaw Pact"
+		}
+		x = 1
+		y = 5
+
+	}
+	focus = {
+		id = DDR_destroy_the_soviet_traitors
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = DDR_rebuild_the_volksarmee
+		}
+		mutually_exclusive = {
+			focus = DDR_seek_new_alliance_with_soviets
+		}
+		x = 3
+		y = 5
+
+	}
+	focus = {
+		id = DDR_one_country_two_systems
+		icon = GFX_focus_ger_bulwark_against_bolshevism
+		cost = 10.00
+		prerequisite = {
+			focus = DDR_seek_reunification
+		}
+		mutually_exclusive = {
+			focus = DDR_abandon_socialism
+			focus = DDR_we_are_the_true_germany
+		}
+		x = 5
+		y = 3
+			completion_reward = {
+					GER = {
+							puppet = DDR
+						}
+				}
+
+	}
+	focus = {
+		id = DDR_deny_NATO_membershiop
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = DDR_one_country_two_systems
+		}
+		x = 5
+		y = 4
+
+	}
+	focus = {
+		id = DDR_create_the_volkerbund
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = DDR_deny_NATO_membershiop
+		}
+		x = 5
+		y = 5
+
+	}
+	focus = {
+		id = DDR_seek_independence
+		icon = GFX_focus_generic_strike_at_democracy2
+		cost = 10.00
+		prerequisite = {
+			focus = DDR_the_future_of_the_DDR
+		}
+		mutually_exclusive = {
+			focus = DDR_seek_reunification
+		}
+		x = 9
+		y = 2
+			completion_reward = {
+					set_politics = {
+							nationalist = {
+									popularity = 52
+								}
+							ruling_party = nationalist
+						}
+				}
+
+	}
+	focus = {
+		id = DDR_abandon_socialism
+		icon = GFX_focus_generic_strike_at_democracy3
+		cost = 10.00
+		prerequisite = {
+			focus = DDR_seek_reunification
+			focus = DDR_seek_independence
+		}
+		mutually_exclusive = {
+			focus = DDR_one_country_two_systems
+			focus = DDR_create_the_prussian_democratic_republic
+			focus = DDR_we_are_the_true_germany
+		}
+		x = 7
+		y = 3
+			completion_reward = {
+				}
+
+	}
+	focus = {
+		id = DDR_remilitarization_of_prussia
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = DDR_abandon_socialism
+		}
+		x = 7
+		y = 4
+
+	}
+	focus = {
+		id = DDR_demand_bonn
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = DDR_remilitarization_of_prussia
+		}
+		x = 7
+		y = 5
+
+	}
+	focus = {
+		id = DDR_create_the_prussian_democratic_republic
+		icon = GFX_focus_ger_revive_kaiserreich
+		cost = 10.00
+		prerequisite = {
+			focus = DDR_seek_independence
+		}
+		mutually_exclusive = {
+			focus = DDR_abandon_socialism
+		}
+		x = 9
+		y = 3
+			completion_reward = {
+
+}
+
+	}
+	focus = {
+		id = DDR_demand_pomerania_and_silesia
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = DDR_create_the_prussian_democratic_republic
+			focus = DDR_we_are_the_true_germany
+		}
+		x = 9
+		y = 4
+
+	}
+	focus = {
+		id = DDR_demand_ostpruessen
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = DDR_demand_pomerania_and_silesia
+		}
+		x = 9
+		y = 5
+
+	}
+	focus = {
+		id = DDR_create_the_pruessen_arbeiterarmee
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = DDR_create_the_prussian_democratic_republic
+		}
+		x = 11
+		y = 4
+
+	}
+	focus = {
+		id = DDR_aspire_for_democracy
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = DDR_abandon_socialism
+		}
+		x = 14
+		y = 4
+
+	}
+	focus = {
+		id = DDR_first_ostdeutsche_elections
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = DDR_aspire_for_democracy
+		}
+		x = 14
+		y = 5
+
+	}
+	focus = {
+		id = DDR_new_nazi_germany
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = DDR_first_ostdeutsche_elections
+		}
+		mutually_exclusive = {
+			focus = DDR_new_weimar_republik
+			focus = DDR_new_german_empire
+		}
+		x = 12
+		y = 6
+
+	}
+	focus = {
+		id = DDR_new_weimar_republik
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = DDR_first_ostdeutsche_elections
+		}
+		mutually_exclusive = {
+			focus = DDR_new_nazi_germany
+			focus = DDR_new_german_empire
+		}
+		x = 14
+		y = 6
+
+	}
+	focus = {
+		id = DDR_new_german_empire
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = DDR_first_ostdeutsche_elections
+		}
+		mutually_exclusive = {
+			focus = DDR_new_weimar_republik
+			focus = DDR_new_nazi_germany
+		}
+		x = 16
+		y = 6
+
+	}
+}

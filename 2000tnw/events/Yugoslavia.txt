@@ -1,0 +1,248 @@
+﻿add_namespace = Yugoslavia
+add_namespace = croatia_bosnia_war
+country_event = {
+	id = Yugoslavia.0
+	title = "Influence of Slovenian Politics has failed!"
+	desc = "Us trying to increase support for communist parties have failed."
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		trigger = {
+			tag = SER
+		}
+		name = "Dammit!"
+	}
+
+}
+country_event = {
+	id = Yugoslavia.1
+	title = "Riots in Sarajevo!"
+	desc = "The Bosnian Independence Party orchastrated a peaceful protest in Sarajevo last night, the Yugoslavian Popular Police Force responded by shooting rubber bullets at the protestors, which led to rioting and chaos in the city of Sarajevo. 25 People have been reportedly been killed by the police and 3 by the rioters."
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		ai_chance = {
+			factor = 75
+		}
+		name = "Good job lads!"
+		add_stability = -0.3
+		country_event = { id = Yugoslavia.2 hours = 25}
+	}
+	option = {
+		ai_chance = {
+			factor = 25
+		}
+		name = "Arrest these murderers!"
+		add_stability = 0.1
+	}
+
+}
+
+country_event = {
+	id = Yugoslavia.2
+	title = "Storming of the Bosnian Socialist Assembly!"
+	desc = "The Muslimana i Vojske Slobode Nezavisnosti BiH and the Nacionalna Socijalistička Bosanska Vojska have stormed the Bosnian Socialist Assembly and proclaimed the 'Sarajevo-Republike Bosne'. What should we do?"
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		ai_chance = {
+			factor = 75
+		}
+		name = "Invade this puny nation!"
+		add_stability = -0.3
+		country_event = { id = Yugoslavia.3 hours = 13 } 
+	}
+	option = {
+		ai_chance = {
+			factor = 25
+		}
+		name = "Seek an agreement with the paramilitaries."
+		add_stability = 0.1
+	}
+
+}
+
+country_event = {
+	id = Yugoslavia.3
+	title = "Bosnian Uprising!"
+	desc = "The Muslimana i Vojske Slobode Nezavisnosti BiH has ordered several uprisings all over the Socialist Republic of Bosnia and Herzegovina"
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = "We'll never give up without a fight!"
+		add_stability = -0.3
+		BOS = {
+			transfer_state = 104
+			transfer_state = 851
+			set_politics = {
+				nationalist = {
+					popularity = 96
+				}
+				social_democrat = {
+					popularity = 3
+				}
+				demoratic_socialist = {
+					popularity = 1
+				}
+				ruling_party = nationalist
+			}
+		}
+		declare_war_on = {
+			target = BOS
+			type = annex_everything
+		}
+		hidden_effect = {
+			country_event = { id = Yugoslavia.4 hours = 13 } 
+			country_event = { id = Yugoslavia.5 hours = 48 }
+			load_oob = "Republika_Srpska"
+			BOS = {
+				load_oob = "BOS_2000"
+			}
+		}
+	}
+
+}
+country_event = {
+	id = Yugoslavia.4
+	title = "Slovenia declares independence!"
+	desc = "The Slovenian Government, largely run by anti-communist parties already, has declared independence from the Federative Republics of Yugoslavia. With their increased autonomy since 1992 - and giving them all of Istria - , we would think that they would not be trouble to us anymore, however we were sadly wrong."
+	is_triggered_only = yes
+	fire_only_once = yes
+	immediate = {
+		end_puppet = SLV
+	}
+	option = {
+		name = "Declare war on them!"
+		declare_war_on = {
+			target = SLV
+			type = puppet
+		}
+		hidden_effect = {
+			country_event = { id = Yugoslavia.6 hours = 720 }
+			SLV = {
+				load_oob = "SLV_2000"
+				set_politics = {
+					nationalist = {
+						popularity = 96
+					}
+					social_democrat = {
+						popularity = 3
+					}
+					demoratic_socialist = {
+						popularity = 1
+					}
+					ruling_party = nationalist
+				}
+			}
+		}
+	}
+
+}
+
+
+country_event = {
+	id = Yugoslavia.5
+	title = "Croatia declares independence!"
+	desc = "The Croation Socialist Assembly unaminously voted for independence yesterday, and have proclaimed the Croatian State"
+	is_triggered_only = yes
+	fire_only_once = yes
+	immediate = {
+		CRO = {
+			transfer_state = 109
+			transfer_state = 103
+			transfer_state = 163
+			transfer_state = 850
+			set_politics = {
+				nationalist = {
+					popularity = 96
+				}
+				social_democrat = {
+					popularity = 3
+				}
+				demoratic_socialist = {
+					popularity = 1
+				}
+				ruling_party = nationalist
+			}
+		}
+	}
+	option = {
+		name = "Declare war on them!"
+		declare_war_on = {
+			target = CRO
+			type = puppet
+		}
+		hidden_effect = {
+			country_event = { id = Yugoslavia.7 hours = 1440 }
+			CRO = {
+				load_oob = "CRO_2000"
+				country_event = { id = croatia_bosnia_war.1 hours = 190 }
+			}
+			load_oob = "Republika_Srpska_Krajina"
+		}
+	}
+
+}
+
+country_event = {
+	id = croatia_bosnia_war.1
+	title = "The War on Bosnia act has been passed by the Croatian Socialist Assembly."
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = "Ok."
+		declare_war_on = { target = BOS type = annex_everything }
+		load_oob = "Hrvatska republikanska vojska Hercegovine i Bosne"
+	}
+}
+
+country_event = {
+	id = Yugoslavia.6
+	title = "Kosovo declares independence!"
+	desc = "The Autonomous Province of Kosovo and Metohija unaminously voted for independence yesterday, and have proclaimed the Kosovan State"
+	is_triggered_only = yes
+	fire_only_once = yes
+	immediate = {
+		KOS = {
+			transfer_state = 785
+		}
+	}
+	option = {
+		name = "Declare war on them!"
+		declare_war_on = {
+			target = KOS
+			type = puppet
+		}
+		hidden_effect = {
+			KOS = {
+				load_oob = "KOS_2016"
+			}
+		}
+	}
+
+}
+country_event = {
+	id = Yugoslavia.7
+	title = "Bulgaria invades Macedonia!"
+	desc = "The Macedonian Socialist Assembly recently passed the 'Serb Language Act' that made Serbian the only official language of Macedonia, the Socialist Republic of Bulgaria retaliated with an invasion force. Should we help our comrades or give them away to the Bulgarians?"
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = "Declare war on them!"
+		declare_war_on = {
+			target = BUL
+			type = puppet
+		}
+	}
+	option = {
+		name = "Give them Macedonia!"
+		BUL = {
+			transfer_state = 106
+		}
+	}
+
+}

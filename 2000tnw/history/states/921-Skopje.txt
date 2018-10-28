@@ -1,0 +1,29 @@
+
+state={
+	id=921
+	name="STATE_921"
+	
+	resources = {
+		steel = 3
+	}
+	
+	history={
+		owner = SER
+		add_core_of = MAC
+		add_core_of = BUL
+		buildings = {
+			infrastructure = 4
+			industrial_complex = 3
+			arms_factory = 1
+			air_base = 2
+		}
+		victory_points = { 3882 5 }
+	}
+
+	provinces={
+		3882 
+	}
+	manpower=1210200
+	buildings_max_level_factor=1.000
+	state_category = state_level_8
+}

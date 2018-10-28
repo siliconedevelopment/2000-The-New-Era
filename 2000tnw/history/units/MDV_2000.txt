@@ -1,0 +1,90 @@
+﻿division_template = {
+	name = "Infantry Brigade"
+	
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+	}
+}
+division_template = {
+	name = "Forța de Eliberare a României Mari"
+	
+	regiments = {
+		infantry = { x = 0 y = 0 }
+	}
+}
+division_template = {
+	name = "Motorized Brigade"
+	
+	regiments = {
+		motorized = { x = 0 y = 0 }
+		motorized = { x = 0 y = 1 }
+		motorized = { x = 0 y = 2 }
+	}
+	support = {
+		field_hospital = { x = 0 y = 0 }
+		engineer = { x = 0 y = 1 }
+	}
+}
+division_template = {
+	name = "Mechanized Brigade"
+	
+	regiments = {
+		mechanized = { x = 0 y = 0 }
+		mechanized = { x = 0 y = 1 }
+		mechanized = { x = 0 y = 2 }
+		mechanized = { x = 0 y = 3 }
+	}
+	support = {
+		field_hospital = { x = 0 y = 0 }
+		engineer = { x = 0 y = 1 }
+	}
+}
+division_template = {
+	name = "Armored Brigade"
+	
+	regiments = {
+		modern_armor = { x = 0 y = 0 }
+		modern_armor = { x = 0 y = 1 }
+		motorized = { x = 1 y = 0 }
+		motorized = { x = 1 y = 1 }
+	}
+	support = {
+		field_hospital = { x = 0 y = 0 }
+	}
+}
+
+units = {
+	
+	division = {
+		name = "Moldovan Ground Forces"
+		location = 3707
+		division_template = "Mechanized Brigade"
+		start_experience_factor = 0.3
+	}
+	division = {
+		name = "Moldovan Ground Forces"
+		location = 3707
+		division_template = "Infantry Brigade"
+		start_experience_factor = 0.7
+	}
+	division = {
+		name = "Prima Forță de Eliberare a României Mari"
+		location = 3707
+		division_template = "Forța de Eliberare a României Mari"
+		start_experience_factor = 0.1
+	}
+	division = {
+		name = "Doua Forță de Eliberare a României Mari"
+		location = 3707
+		division_template = "Forța de Eliberare a României Mari"
+		start_experience_factor = 0.1
+	}
+	division = {
+		name = "Treia Forță de Eliberare a României Mari"
+		location = 3707
+		division_template = "Forța de Eliberare a României Mari"
+		start_experience_factor = 0.1
+	}
+}

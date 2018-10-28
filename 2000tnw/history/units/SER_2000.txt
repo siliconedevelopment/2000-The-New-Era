@@ -1,0 +1,165 @@
+﻿division_template = {
+	name = "Mechanized Brigade"
+	
+	regiments = {
+		mechanized = { x = 0 y = 0 }
+		light_mechanized = { x = 0 y = 1 }
+		light_mechanized = { x = 0 y = 2 }
+	}
+	support = {
+		field_hospital = { x = 0 y = 0 }
+		engineer = { x = 0 y = 1 }
+		recon = { x = 0 y = 2 }
+	}
+}
+division_template = {
+	name = "Armored Brigade"
+	
+	regiments = {
+		modern_armor = { x = 0 y = 0 }
+		modern_armor = { x = 0 y = 1 }
+		mechanized = { x = 1 y = 0 }
+		mechanized = { x = 1 y = 1 }
+		mechanized = { x = 1 y = 2 }
+	}
+	support = {
+		field_hospital = { x = 0 y = 0 }
+	}
+}
+division_template = {
+	name = "Infantry Brigade"
+	
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+	}
+	support = {
+		field_hospital = { x = 0 y = 0 }
+	}
+}
+
+units = {
+	
+	division = {
+		name = "Brigada Specijalnih Snaga Srbije"
+		location = 3617
+		division_template = "Armored Brigade"
+		start_experience_factor = 0.3
+	}
+	
+	division = {
+		name = "2. Београдска бригада"
+		location = 11586
+		division_template = "Mechanized Brigade"
+		start_experience_factor = 0.3
+	}
+	division = {
+		name = "Крагујевачка бригада"
+		location = 11583
+		division_template = "Mechanized Brigade"
+		start_experience_factor = 0.3
+	}
+	division = {
+		name = "Новосадска бригада"
+		location = 3617
+		division_template = "Mechanized Brigade"
+		start_experience_factor = 0.3
+	}
+	division = {
+		name = "2. Новосадска бригада"
+		location = 3617
+		division_template = "Mechanized Brigade"
+		start_experience_factor = 0.3
+	}
+	division = {
+		name = "Сарајевска бригада"
+		location = 11899
+		division_template = "Mechanized Brigade"
+		start_experience_factor = 0.3
+	}
+	division = {
+		name = "Бањалучка бригада"
+		location = 11899
+		division_template = "Mechanized Brigade"
+		start_experience_factor = 0.3
+	}
+	division = {
+		name = "Суботичка бригада"
+		location = 9621
+		division_template = "Mechanized Brigade"
+		start_experience_factor = 0.3
+	}
+	division = {
+		name = "Сплит Бригада"
+		location = 3924
+		division_template = "Mechanized Brigade"
+		start_experience_factor = 0.3
+	}
+	division = {
+		name = "Сплит Бригада"
+		location = 3924
+		division_template = "Mechanized Brigade"
+		start_experience_factor = 0.3
+	}	
+	division = {
+		name = "Градска полицијска снага града Загреба"
+		location = 11581
+		division_template = "Infantry Brigade"
+		start_experience_factor = 0.3
+	}	
+	division = {
+		name = "2. Градска полицијска снага града Загреба"
+		location = 11581
+		division_template = "Infantry Brigade"
+		start_experience_factor = 0.3
+	}
+	division = {
+		name = "Srpska nacionalistička socijalistička partija Paravojna"
+		location = 3924
+		division_template = "Infantry Brigade"
+		start_experience_factor = 0.3
+	}	
+	division = {
+		name = "Srpska nacionalistička socijalistička partija Paravojna"
+		location = 3617
+		division_template = "Infantry Brigade"
+		start_experience_factor = 0.3
+	}	
+	division = {
+		name = "Srpska nacionalistička socijalistička partija Paravojna"
+		location = 11899
+		division_template = "Infantry Brigade"
+		start_experience_factor = 0.3
+	}		
+}
+
+### Air OOB ###
+
+air_wings = {
+	107 = {
+		#MiG-29A - Downgrade if 80s equipment gets added
+		jet_multirole_equipment_3 = {
+			owner = "SER" 
+			amount = 4
+		}
+
+	}
+	107 = {
+		#MiG-21Bis - 70s but downgraded for gameplay variety
+		jet_multirole_equipment_1 = {
+			owner = "SER" 
+			amount = 10
+		}
+
+	}
+	108 = {
+		#J-22 - Downgrade if 80s equipment gets added
+		jet_attack_equipment_2 = {
+			owner = "SER" 
+			amount = 37
+		}
+	}
+}

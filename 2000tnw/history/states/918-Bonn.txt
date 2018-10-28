@@ -1,0 +1,25 @@
+
+state={
+	id=918
+	name="STATE_918"
+	resources={
+		aluminium=3
+	}
+
+	history={
+		owner = GER
+		victory_points = { 3547 3 }		#Bonn
+		buildings = {
+			infrastructure = 4
+			industrial_complex = 1
+		}
+		add_core_of = GER
+	}
+
+	provinces={
+		3547
+	}
+	manpower=31125308
+	buildings_max_level_factor=1.000
+	state_category = state_level_13
+}
