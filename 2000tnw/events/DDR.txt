@@ -1,0 +1,33 @@
+add_namespace = ddr
+
+country_event = {
+	id = ddr.1
+	title = "Full independence from the Federal Republic of Germany?"
+	desc = "Ever since the Treaty of Minsk, 1992, the diplomatic and military control of the DDR was transferred towards West Germany, however on one condition that the two countries cannot unite together, since then, the West Germans have found a loophole that allowed both Germanies to exist in a sort of 1 country 2 systems agreement. Independence from the German Union may result in disaster for us."
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = "Scrap the Treaty of Minsk! Down with the Capitalist West!"
+		GER = { 
+			end_puppet = DDR
+			dismantle_faction = yes
+			USA = { add_to_faction = GER }
+		}
+		add_stability = -0.2	
+		
+	}
+}
+country_event = {
+	id = ddr.2
+	title = "[DDR.GetLeader] announces the nullification of the Treaty of Minsk"
+	desc = "Ever since the Treaty of Minsk, 1992, the diplomatic and military control of the DDR was transferred towards West Germany, however on one condition that the two countries cannot unite together, since then, the West Germans have found a loophole that allowed both Germanies to exist in a sort of 1 country 2 systems agreement. The East German Chancellor, [DDR.GetLeader], has announced the nullification of the treaty, which could lead to two things: Unification or Independence."
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = "Scrap the Treaty of Minsk! For Unification!"
+		add_stability = 0.2	
+		
+	}
+}

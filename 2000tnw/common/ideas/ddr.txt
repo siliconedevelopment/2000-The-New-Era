@@ -1,0 +1,101 @@
+ideas = {
+	country = {
+		DDR_decapitalization = {
+			
+			allowed = {
+				always = no
+			}
+			
+			picture = DDR
+			
+			modifier = {
+				army_morale_factor = 0.25
+				army_org_Factor = -0.25
+				stability_weekly = 0.015
+				political_power_gain = 0.5
+				min_export = -0.05
+				production_factory_max_efficiency_factor = 0.1 
+				global_building_slots_factor = -0.05 
+				high_command_cost_factor = -0.50
+				army_armor_speed_factor = 0.25 	
+				consumer_goods_factor = -0.10 
+				communist_drift = 0.10
+				democratic_socialist_drift = 0.07
+				progressive_drift = 0.03
+				social_democrat_drift = -0.05
+				social_liberal_drift = -0.10
+				market_liberal_drift = -0.10
+				conservative_drift = -0.10
+				reactionary_drift = -0.10
+				fascist_drift = -0.10
+			}
+			
+		}
+		DDR_National_Volksarmee = {
+			
+			allowed = {
+				always = no
+			}
+			
+			picture = NVA
+			
+			modifier = {
+				out_of_supply_factor = -0.7
+				dig_in_speed = 0.5
+				attrition = -0.5
+				offence = 0.3
+				partisan_effect = 0.4
+				ai_badass_factor = 0.05
+				conscription = 0.05
+				army_infantry_attack_factor = -0.10
+				army_armor_attack_factor = 0.3
+				army_armor_speed_factor = 0.25
+				send_volunteer_size = 2
+				surrender_limit = 0.9
+				special_forces_cap = 0.2
+				war_support_weekly = 0.10
+				research_bonus = { army_doctrine = 0.15 } 
+			}
+			
+		}
+		DDR_state_capitalism = {
+			
+			allowed = {
+				always = no
+			}
+			
+			picture = democratic_socialism
+			
+			modifier = {
+				research_time_factor = -0.05 
+				production_speed_industrial_complex_factor = 0.3
+				min_export = 0.05
+				consumer_goods_factor = 0.15 
+				production_factory_max_efficiency_factor = 0.2 
+				global_building_slots_factor = 0.20 
+			}
+			
+		}
+		DDR_german_unification = {
+			
+			allowed = {
+				always = no
+			}
+			
+			picture = national_unity
+			
+			modifier = {
+				autonomy_gain = -5
+				communist_drift = -0.10
+				democratic_socialist_drift = 0.01
+				nationalist_drift = 0.05
+				market_liberal_drift = 0.05
+				social_democrat_drift = 0.05
+				conservative_drift = 0.10
+				social_liberal_drift = 0.10
+				fascist_drift = 0.01
+			}
+			
+		}
+	}
+}
