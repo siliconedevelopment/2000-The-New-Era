@@ -142,7 +142,7 @@ country_event = {
 	is_triggered_only = yes
 	fire_only_once = yes
 	trigger = {
-		date > 2000.2.1
+		has_country_flag = soviet_dollar_lol
 		NOT = {
 			has_government = nationalist
 			has_global_flag = SOV_andrey

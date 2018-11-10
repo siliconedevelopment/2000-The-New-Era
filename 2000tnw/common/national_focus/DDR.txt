@@ -10,7 +10,7 @@ focus_tree = {
 	default = no
 	focus = {
 		id = DDR_the_future_of_the_DDR
-		icon = GFX_attack_communism
+		icon = attack_communism
 		cost = 5.00
 		x = 8
 		y = 1
@@ -21,7 +21,7 @@ focus_tree = {
 	# Independence Sub-branch
 	focus = {
 		id = DDR_independence
-		icon = GFX_demand_territory2
+		icon = demand_territory2
 		cost = 5.00
 		x = 7
 		y = 2
@@ -29,7 +29,7 @@ focus_tree = {
 			focus = DDR_the_future_of_the_DDR
 		}
 		mutually_exclusive = {
-			focus = DDR_unification
+			focus = DDR_scrap_the_treaty_of_minsk
 		}
 		completion_reward = {
 				country_event = { id = ddr.1 hours = 24 }
@@ -38,7 +38,7 @@ focus_tree = {
 	#Decapitalization of Germany Sub-branch
 	focus = {
 		id = DDR_decapitalize_east_germany
-		icon = GFX_communist_party_of_china
+		icon = communist_party_of_china
 		cost = 7.00
 		x = 7
 		y = 4
@@ -57,7 +57,7 @@ focus_tree = {
 	}
 	focus = {
 		id = DDR_recreate_the_NVA
-		icon = GFX_communism8
+		icon = communism8
 		cost = 12.00
 		x = 7
 		y = 5
@@ -78,9 +78,9 @@ focus_tree = {
 	#State-Capitalist sub-branch
 	focus = {
 		id = DDR_state_capitalism
-		icon = GFX_communist_china
+		icon = communist_china
 		cost = 7.00
-		x = 6
+		x = 5
 		y = 4
 		prerequisite = {
 			focus = DDR_independence
@@ -97,9 +97,9 @@ focus_tree = {
 	#German Unification Sub-branch
 	focus = {
 		id = DDR_scrap_the_treaty_of_minsk
-		icon = GFX_align_to_germany
+		icon = align_to_germany
 		cost = 7.00
-		x = 8
+		x = 9
 		y = 2
 		prerequisite = {
 			focus = DDR_the_future_of_the_DDR

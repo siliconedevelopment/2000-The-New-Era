@@ -23,7 +23,7 @@ country_event = {
 
 	option = {
 		ai_chance = {
-			factor = 75
+			factor = 99
 		}
 		name = "Good job lads!"
 		add_stability = -0.3
@@ -31,7 +31,7 @@ country_event = {
 	}
 	option = {
 		ai_chance = {
-			factor = 25
+			factor = 1
 		}
 		name = "Arrest these murderers!"
 		add_stability = 0.1
@@ -48,7 +48,7 @@ country_event = {
 	
 	option = {
 		ai_chance = {
-			factor = 75
+			factor = 99
 		}
 		name = "Invade this puny nation!"
 		add_stability = -0.3
@@ -56,7 +56,7 @@ country_event = {
 	}
 	option = {
 		ai_chance = {
-			factor = 25
+			factor = 1
 		}
 		name = "Seek an agreement with the paramilitaries."
 		add_stability = 0.1
@@ -232,6 +232,9 @@ country_event = {
 	fire_only_once = yes
 
 	option = {
+		ai_chance = {
+			factor = 100
+		}
 		name = "Declare war on them!"
 		declare_war_on = {
 			target = BUL
@@ -239,9 +242,38 @@ country_event = {
 		}
 	}
 	option = {
+		ai_chance = {
+			factor = 0
+		}
 		name = "Give them Macedonia!"
 		BUL = {
 			transfer_state = 106
+			transfer_state = 921
+		}
+	}
+
+}
+country_event = {
+	id = Yugoslavia.8
+	title = "Peace with Bulgaria?"
+	desc = "The Bulgarians have captured Skopje and some over key cities in Macedonia, should we let them annex the lands or keep on fighting?"
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		ai_chance = {
+			factor = 100
+		}
+		name = "Fight on!"
+	}
+	option = {
+		ai_chance = {
+			factor = 0
+		}
+		name = "Peace! (Treaty of Nis)"
+		BUL = {
+			transfer_state = 106
+			transfer_state = 921
 		}
 	}
 

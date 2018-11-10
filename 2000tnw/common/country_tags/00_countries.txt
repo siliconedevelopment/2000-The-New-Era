@@ -224,3 +224,4 @@ ZIM = "countries/Zimbabwe.txt"
 
 # Modded Tags
 DDR = "countries/East Germany.txt"
+FCO = "countries/focuscountry.txt

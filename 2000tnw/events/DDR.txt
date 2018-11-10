@@ -14,7 +14,7 @@ country_event = {
 			dismantle_faction = yes
 			USA = { add_to_faction = GER }
 		}
-		add_stability = -0.2	
+		add_stability = -0.05	
 		
 	}
 }
@@ -27,7 +27,7 @@ country_event = {
 	
 	option = {
 		name = "Scrap the Treaty of Minsk! For Unification!"
-		add_stability = 0.2	
+		add_stability = 0.05	
 		
 	}
 }

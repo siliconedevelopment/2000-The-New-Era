@@ -1,0 +1,98 @@
+focus_tree = {
+	id = Focus_Tree_Country
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = FCO
+		}
+	}
+	default = no
+	focus = {
+		id = FCO_yugoslavia_1
+		icon = attack_communism
+		cost = 5.00
+		x = 1
+		y = 1
+		avaliable = {
+			date > 2000.1.11
+			date < 2000.1.18
+		}
+		historical_ai = {
+			tag = FCO
+			date > 2000.1.11
+			date < 2000.1.18
+		}
+		completion_reward = {
+				add_political_power = 100
+				YUG = { country_event = { id = Yugoslavia.0 } }
+		}
+	}
+	focus = {
+		id = FCO_soviet_1
+		icon = attack_communism
+		cost = 5.00
+		x = 1
+		y = 3
+		avaliable = {
+			date > 2000.1.11
+			date < 2000.1.15
+		}
+		historical_ai = {
+			tag = FCO
+			date > 2000.1.11
+			date < 2000.1.15
+		}
+		prerequisite = {
+			focus = FCO_yugoslavia_1
+		}
+		completion_reward = {
+				add_political_power = 100
+				SOV = { country_event = { id = soviet.1 } }
+		}
+	}
+	focus = {
+		id = FCO_yugoslavia_2
+		icon = attack_communism
+		cost = 5.00
+		x = 3
+		y = 1
+		avaliable = {
+			date > 2000.1.27
+			date < 2000.2.2
+		}
+		historical_ai = {
+			tag = FCO
+			date > 2000.1.27
+			date < 2000.2.2
+		}
+
+		completion_reward = {
+				add_political_power = 100
+				YUG = { country_event = { id = Yugoslavia.1 } }
+		}
+	}
+	focus = {
+		id = FCO_soviet_2
+		icon = attack_communism
+		cost = 5.00
+		x = 1
+		y = 6
+		avaliable = {
+			date > 2000.2.11
+			date < 2000.2.15
+		}
+		historical_ai = {
+			tag = FCO
+			date > 2000.2.11
+			date < 2000.2.15
+		}
+		prerequisite = {
+			focus = FCO_soviet_1
+		}
+		completion_reward = {
+				add_political_power = 100
+				SOV = { set_country_flag = soviet_dollar_lol }
+		}
+	}
+}
