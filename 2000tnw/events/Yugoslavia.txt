@@ -240,6 +240,9 @@ country_event = {
 			target = BUL
 			type = puppet
 		}
+		BUL = {
+			add_ideas = BUL_Invasion_of_Macedonia
+		}
 	}
 	option = {
 		ai_chance = {
@@ -259,21 +262,44 @@ country_event = {
 	desc = "The Bulgarians have captured Skopje and some over key cities in Macedonia, should we let them annex the lands or keep on fighting?"
 	is_triggered_only = yes
 	fire_only_once = yes
-
-	option = {
-		ai_chance = {
-			factor = 100
+	
+	
+	trigger = {
+		BUL = {
+			controls_state = 106
 		}
-		name = "Fight on!"
 	}
 	option = {
 		ai_chance = {
-			factor = 0
+			factor = 50
+		}
+		name = "Fight on!"
+		BUL = {
+			remove_ideas = BUL_Invasion_of_Macedonia
+			add_ideas = BUL_Continued_War_With_Yugoslavia
+			add_stability = -0.3
+			add_war_support = 0.3
+		}
+		add_stability = -0.2
+		add_war_support = -0.2
+	}
+	option = {
+		ai_chance = {
+			factor = 50
 		}
 		name = "Peace! (Treaty of Nis)"
 		BUL = {
 			transfer_state = 106
 			transfer_state = 921
+		}
+		BUL = {
+			remove_ideas = BUL_Invasion_of_Macedonia
+			add_stability = -0.1
+		}
+		add_stability = 0.1
+		white_peace = {
+			tag = YUG
+			message = "Treaty of Nis"
 		}
 	}
 

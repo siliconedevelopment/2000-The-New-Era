@@ -100,13 +100,13 @@ set_politics = {
 
 	parties = {
 		islamist = {
-			popularity = 6
+			popularity = 6.5
 		}
 		nationalist = {
-			popularity = 31
+			popularity = 39.4
 		}
 		reactionary = {
-			popularity = 4
+			popularity = 3.1
 		}
 		conservative = {
 			popularity = 1
@@ -124,7 +124,7 @@ set_politics = {
 			popularity = 2
 		}
 		democratic_socialist = {
-			popularity = 10
+			popularity = 1
 		}
 		communist = {
 			popularity = 40

@@ -62,7 +62,7 @@ set_politics = {
 
 	parties = {
 		islamist = {
-			popularity = 60
+			popularity = 34.5
 		}
 		conservative = {
 			popularity = 20
@@ -74,14 +74,14 @@ set_politics = {
 			popularity = 5
 		}
 		social_democrat = {
-			popularity = 5
+			popularity = 0
 		}
 		communist = {
-			popularity = 5
+			popularity = 35.5
 		}
 	}
 	
-	ruling_party = islamist
+	ruling_party = communist
 	last_election = "1997.1.1"
 	election_frequency = 48
 	elections_allowed = no

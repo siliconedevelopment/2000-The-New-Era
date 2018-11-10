@@ -90,10 +90,10 @@ set_politics = {
 		market_liberal = { popularity = 25 }
 		reactionary = { popularity = 20 }
 		social_liberal = { popularity = 10 }
-		social_democrat = { popularity = 10 }
-		progressive = { popularity = 2 }
+		social_democrat = { popularity = 5 }
+		progressive = { popularity = 1 }
 		democratic_socialist = { popularity = 2 }
-		communist = { popularity = 1 }
+		communist = { popularity = 7 }
 	}
 	ruling_party = conservative
 	last_election = "1998.9.20"

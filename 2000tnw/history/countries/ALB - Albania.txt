@@ -97,13 +97,13 @@ add_ideas = {
 set_politics = {
 
 	parties = {
-		nationalist = { popularity = 1 }
-		reactionary = { popularity = 2 }
-		conservative = { popularity = 23 }
-		social_democrat = { popularity = 31 }
-		progressive = { popularity = 3 }
-		democratic_socialist = { popularity = 16 }
-		communist = { popularity = 2 }
+		nationalist = { popularity = 17}
+		reactionary = { popularity = 0 }
+		conservative = { popularity = 0.1 }
+		social_democrat = { popularity = 35.8 }
+		progressive = { popularity = 7 }
+		democratic_socialist = { popularity = 14 }
+		communist = { popularity = 13.1 }
 	}
 	
 	ruling_party = social_democrat

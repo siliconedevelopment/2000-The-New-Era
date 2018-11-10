@@ -94,6 +94,7 @@ country_event = {
 				social_democrat = {
 					popularity = 6
 				}
+				ruling_party = communist
 				elections_allowed = yes
 				election_frequency = 12
 			}

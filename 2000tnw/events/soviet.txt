@@ -40,6 +40,9 @@ country_event = {
 			ideology = communist
 			popularity = 0.03
 		}
+		hidden_effect = {
+			country_event = { id = soviet.4 hours = 13 }
+		}
 	}
 	option = {
 		ai_chance = {
@@ -59,6 +62,9 @@ country_event = {
 			elections_allowed = yes
 		}
 		country_event = { id = soviet.2 hours = 240 }
+		hidden_effect = {
+			country_event = { id = soviet.4 hours = 13 }
+		}
 	}
 	option = {
 		ai_chance = {
@@ -71,6 +77,9 @@ country_event = {
 		}
 		set_politics = {
 			ruling_party = conservative
+		}
+		hidden_effect = {
+			country_event = { id = soviet.4 hours = 1630 }
 		}
 	}
 }
@@ -176,5 +185,35 @@ country_event = {
 			country_event = { id = chechen.1 }
 		}
 	}
+	
+}
+
+country_event = {
+	id = soviet.4
+	title = "Georgia declares independence!"
+	desc = "The Georgian Troubles began in 1994 with Georgian Nationalists wanting to secure and independent Georgia. Abhkazia and Southern Ossetia have declined to join the new Georgian republic, and instead have become autonomous oblasts of the RSFSR."
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		ai_chance = {
+			factor = 100
+		}
+		name = "Stalin would be furious!"
+		GEO = {
+			transfer_state = 231
+			set_politics = {
+				nationalist = {
+					popularity = 49
+				}
+				reactionary = {
+					popularity = 48
+				}
+				communist = {
+					popularity = 3
+				}
+			}
+		}
+	}
+
 	
 }

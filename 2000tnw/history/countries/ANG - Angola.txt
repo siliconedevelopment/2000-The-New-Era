@@ -112,7 +112,7 @@ set_politics = {
 			popularity = 34
 		}	
 		conservative = {
-			popularity = 30
+			popularity = 16
 		}
 		social_liberal = {
 			popularity = 15
@@ -121,11 +121,11 @@ set_politics = {
 			popularity = 6
 		}
 		communist = {
-			popularity = 15
+			popularity = 29
 		}
 	}
 	
-	ruling_party = conservative
+	ruling_party = communist
 	last_election = "1997.1.1"
 	election_frequency = 48
 	elections_allowed = yes
