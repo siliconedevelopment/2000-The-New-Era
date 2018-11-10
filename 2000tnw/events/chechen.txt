@@ -101,7 +101,7 @@ country_event = {
 			load_oob = "SOS_2000"
 		}
 	}
-	option = {
+	option = {   
 		ai_chance = {
 			factor = 21
 		}
