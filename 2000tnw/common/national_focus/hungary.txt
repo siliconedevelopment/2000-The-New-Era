@@ -1,2 +1,54 @@
 focus_tree = {
+	id = hungary
+	country = {
+		factor = 0
+		modifier = {
+			tag = HUN
+			add = 20
+		}
+	}
+	default = no
+	focus = {
+		id = HUN_Government_Reform
+		icon = communism3
+		cost = 1.00
+		x = 3
+		y = 1
+		completion_reward = {
+				add_political_power = 100
+				country_event = { id = hungary.1 hours = 24 }
+		}
+	}
+	focus = {
+		id = HUN_Continue_Socialism_With_A_Human_Face
+		icon = communism4
+		cost = 5.00
+		x = 1
+		y = 2
+		prerequisite = {
+			focus = HUN_Government_Reform
+		}
+		avaliable = {
+			always = no
+		}
+		completion_reward = {
+				add_political_power = 100
+		}
+	}
+	focus = {
+		id = HUN_Nationalist_Coup
+		icon = war4
+		cost = 5.00
+		x = 5
+		y = 2
+		prerequisite = {
+			focus = HUN_Government_Reform
+		}
+		avaliable = {
+			always = no
+		}
+		completion_reward = {
+				add_political_power = 100
+		}
+	}
 }

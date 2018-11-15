@@ -89,22 +89,28 @@ set_politics = {
 
 	parties = {
 		conservative = {
-			popularity = 0
+			popularity = 0.7
 		}
 		social_democrat = {
-			popularity = 29.8
-		}
-		reactionary = {
-			popularity = 13.3
-		}
-		market_liberal = {
-			popularity = 10.2
-		}
-		nationalist = {
 			popularity = 5.6
 		}
+		reactionary = {
+			popularity = 3.7
+		}
+		market_liberal = {
+			popularity = 2.1
+		}
+		nationalist = {
+			popularity = 24.9
+		}
+		democratic_socialist = {
+			popularity = 17.9
+		}
 		communist = {
-			popularity = 29.7
+			popularity = 24.6
+		}
+		fascist = {
+			popularity = 9.1
 		}
 	}
 	
@@ -114,21 +120,6 @@ set_politics = {
 	elections_allowed = yes
 }
 
-add_opinion_modifier = {
-	target = CZE
-	modifier = visegrad_group
-}
-
-add_opinion_modifier = {
-	target = POL
-	modifier = visegrad_group
-	modifier = declaration_of_friendship
-}
-
-add_opinion_modifier = {
-	target = SLO
-	modifier = visegrad_group
-}
 
 create_country_leader = {
 	name = "Viktor Orbán"
@@ -136,42 +127,4 @@ create_country_leader = {
 	picture = "Viktor_Orban.dds"
 }
 
-2004.1.1 = {
-	add_ideas = {
-		idea_eu_member
-	}
-}
 
-2016.1.1 = {
-	set_politics = {
-
-		parties = {
-			conservative = {
-				popularity = 30
-			}
-			social_democrat = {
-				popularity = 25
-			}
-			reactionary = {
-				popularity = 20
-			}
-			nationalist = {
-				popularity = 10
-			}
-			social_liberal = {
-				popularity = 5
-			}
-			market_liberal = {
-				popularity = 5
-			}
-			communist = {
-				popularity = 5
-			}
-		}
-		
-		ruling_party = conservative
-		last_election = "1998.5.24"
-		election_frequency = 48
-		elections_allowed = yes
-	}
-}

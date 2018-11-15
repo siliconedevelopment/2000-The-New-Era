@@ -1,1 +1,113 @@
-﻿
+﻿add_namespace = hungary
+
+country_event = {
+	id = hungary.1
+	title = "Government reform"
+	desc = "After the 1990-94 riots, the government knew they needed change, that is why the Communist Party of Hungary implemented a hybrid of democratic socialism and socialism with a human face. So far it has mainly kept unrest under control, but after the rise of the far-right Hungarian National Anticommunist League, anything could happen."
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		ai_chance = {
+			factor = 99
+		}
+		name = "We need a complete removal of left wing politics!"
+		country_event = { id = hungary.2 hours = 38 }
+		add_stability = -0.1
+		add_popularity = {
+			ideology = communist
+			popularity = -0.05
+		}
+	}
+	option = {
+		ai_chance = {
+			factor = 1
+		}
+		name = "We need to secure socialism for everybody!"
+		add_stability = 0.1
+		add_popularity = {
+			ideology = communist
+			popularity = 0.05
+		}
+		complete_national_focus = HUN_Continue_Socialism_With_A_Human_Face
+	}	
+}
+country_event = {
+	id = hungary.2
+	title = "Nationalist Coup!"
+	desc = "The Fascists and Nationalists have took over the National Assembly! They have proclaimed the 'National Unity Government of the Hungarian Republic'!"
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		ai_chance = {
+			factor = 25
+		}
+		name = "The Nationalists shall take over!"
+		complete_national_focus = HUN_Nationalist_Coup
+		set_politics = {
+			parties = {
+				conservative = {
+					popularity = 0.5
+				}
+				social_democrat = {
+					popularity = 1.1
+				}
+				reactionary = {
+					popularity = 6.5
+				}
+				market_liberal = {
+					popularity = 0.1
+				}
+				nationalist = {
+					popularity = 41
+				}
+				democratic_socialist = {
+					popularity = 4
+				}
+				communist = {
+					popularity = 3
+				}
+				fascist = {
+					popularity = 22.3
+				}
+			}
+			ruling_party = nationalist
+			elections_allowed = no
+		}
+	}
+	option = {
+		ai_chance = {
+			factor = 60
+		}
+		name = "We (the Nationalists) have failed to restore order to all of the country"
+		start_civil_war = {
+			ruling_party = nationalist
+			ideology = communist
+			size = 0.5
+			only_own_territory = no
+			capital = 922
+			states = { 
+				922
+			}
+		}
+		complete_national_focus = HUN_Nationalist_Coup
+	}	
+	option = {
+		ai_chance = {
+			factor = 15
+		}
+		name = "We must fight to save Hungarian socialism."
+		start_civil_war = {
+			ruling_party = communist
+			ideology = nationalist
+			size = 0.5
+			only_own_territory = no
+			capital = 154
+			states = { 
+				154 43 155
+			}
+		}
+		complete_national_focus = HUN_Continue_Socialism_With_A_Human_Face
+	}	
+}
