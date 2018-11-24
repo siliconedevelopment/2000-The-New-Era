@@ -1,1 +1,271 @@
-﻿
+﻿add_namespace = Roumania
+
+country_event = {
+	id = Roumania.1
+	title = "Strikes in Cluj!"
+	desc = "The Romanian Miners Union has organized a strike against the Erdélyi Bányászati Vállalat/Corporația Minieră Transilvană for clear Romanophobia and disgusting treatment of Romanians. What shall we do?"
+	
+	trigger = {
+		tag = ROM
+		has_government = market_liberal
+		OR = {	
+			has_government = conservative
+			has_government = reactionary
+			has_government = nationalist
+			has_government = fascist
+			has_government = social_liberal
+			has_government = monarchist
+		}
+	}
+	mean_time_to_happen = { days = 7 }
+	
+	option = {
+		ai_chance = {
+			factor = 75
+		}
+		name = "Organize a police raid against the racist company and illegalize it!"
+		add_popularity = {
+			ideology = conservative
+			popularity = -0.03
+		}
+		add_popularity = {
+			ideology = reactionary
+			popularity = -0.03
+		}
+		add_stability = 0.2
+		set_country_flag = ROM_illegalized_company
+	}
+	option = {
+		ai_chance = {
+			factor = 21
+		}
+		name = "Denounce them as communists and arrest them all!"
+		add_popularity = {
+			ideology = democratic_socialist
+			popularity = -0.07
+		}
+		add_popularity = {
+			ideology = fascist
+			popularity = 0.03
+		}
+		add_popularity = {
+			ideology = nationalist
+			popularity = 0.03
+		}
+		add_popularity = {
+			ideology = communist
+			popularity = 0.10
+		}
+		add_stability = -0.2
+		add_manpower = -750
+		set_country_flag = ROM_denounced_strikers
+	}
+	option = {
+		ai_chance = {
+			factor = 4
+		}
+		name = "Do nothing!"
+		add_popularity = {
+			ideology = democratic_socialist
+			popularity = -0.10
+		}
+		add_popularity = {
+			ideology = fascist
+			popularity = 0.06
+		}
+		add_popularity = {
+			ideology = nationalist
+			popularity = 0.06
+		}
+		add_popularity = {
+			ideology = communist
+			popularity = 0.13
+		}
+		add_stability = -0.3
+		set_country_flag = ROM_do_nothing
+	}
+}
+country_event = {
+	id = Roumania.2
+	title = "Riots in Cluj!"
+	desc = "The members and strikers of the RMU are furious and have refused to stop striking, this lead to rioting in Cluj. What shall we do about this? "
+	
+	trigger = {
+		tag = ROM
+		has_country_flag = ROM_denounced_strikers
+		OR = {
+			tag = ROM
+			has_country_flag = ROM_do_nothing
+		}
+	}
+	mean_time_to_happen = { days = 1 }
+	
+	option = {
+		ai_chance = {
+			factor = 50
+		}
+		name = "We've made a mistake, punish the police officers responsible and illegalize the company"
+		add_stability = 0.05
+		set_country_flag = ROM_illegalized_company
+	}
+	option = {
+		ai_chance = {
+			factor = 35
+		}
+		name = "Restore order to Cluj! Use guns if necessary!"
+		add_stability = -0.05
+		set_country_flag = ROM_attempt_to_restore_order
+	}
+	option = {
+		ai_chance = {
+			factor = 15
+		}
+		name = "We cannot do anything!"
+
+		add_stability = -0.1
+		set_country_flag = ROM_do_nothing_2
+	}
+}
+country_event = {
+	id = Roumania.3
+	title = "Romania in Uprising!"
+	desc = "After the Transylvanian Mining Company was allowed to operate, the opposition party, the left nationalist Partidul Muncitorilor din România Mare stated that if the government refuses to accept the rights of the workers, than they shall be overthrown. Uprisings have occured all around Romania due to this. "
+	
+	trigger = {
+		tag = ROM
+		has_country_flag = ROM_attempt_to_restore_order
+		OR = {
+			tag = ROM
+			has_country_flag = ROM_do_nothing_2
+		}
+	}
+	mean_time_to_happen = { days = 13 }
+	
+	option = {
+		ai_chance = {
+			factor = 95
+		}
+		name = "We have destroyed communists before, time to destroy them again!"
+		set_global_flag = ROM_civil_war
+		division_template = {
+			name = "Armata Patriotică Națională din România"
+			regiments = {
+				infantry = { x = 0 y = 0 }
+			}
+			support = { 
+			} 
+		}
+		if = {
+			limit = {
+				has_government = nationalist
+			}
+			create_country_leader = {
+				name = "Mohammed Zahir Shah"
+				desc = "POLITICS_MOHAMMED_ZAHIR_SHAH_DESC"
+				picture = "Portrait_Afghanistan_Mohammed_Zahir_Shah.dds"
+				expire = "1965.1.1"
+				ideology = autocrat
+				traits = {
+					dictator
+				}
+			}
+		}
+		start_civil_war = {
+			ruling_party = ROOT
+			ideology = communist
+			size = 0.3
+			only_own_territory = no
+			capital = 282
+			states = { 
+				76 81 82 79 84 
+			}
+			keep_unit_leaders = {
+				750 751 752
+			}
+		}
+		random_other_country = {
+			limit = {
+				original_tag = ROM
+				has_government = communist
+			}
+			division_template = {
+				name = "Armata de Eliberare a Muncitorilor din România Mare"
+				regiments = {
+					infantry = { x = 0 y = 0 }
+				}
+				support = { 
+				} 
+			}	
+			set_politics = {
+				parties = {
+					communist = {
+						popularity = 66.8
+					}
+					democratic_socialist = {
+						popularity = 13
+					}
+					progressive = {	
+						popularity = 5
+					}
+					social_liberal = {
+						popularity = 6
+					}
+					nationalist = {
+						popularity = 8
+					}
+					market_liberal = {
+						popularity = 0.1
+						banned = yes
+					}
+					conservative = {
+						popularity = 0.3
+						banned = yes
+					}
+					reactionary = {
+						popularity = 0.7
+						banned = yes
+					}
+					monarchist = {
+						popularity = 0.1
+						banned = yes
+					}
+				}
+			}
+			set_party_name = { 
+				ideology = communist 
+				long_name = "Partidul Libertății Muncii din România Mare" 
+				name = "PLMRM"
+			}
+			set_party_name = {
+				ideology = democratic_socialist
+				long_name = "Partidul Socialist din România Mare"
+				name = "PSRM"
+			}
+			set_party_name = {
+				ideology = progressive
+				long_name = "Progresivii unei Românii Unite Republicane"
+				name = "PRUR"
+			}
+			set_party_name = {
+				ideology = social_liberal
+				long_name = "Partidul Liberal Democrat din România Mare"
+				name = "PLDRM"
+			}
+			set_party_name = {
+				ideology = conservative
+				long_name = "Partidul Democrat Liberal"
+			}
+			set_country_flag = ROM_allow_decision_commie
+		}
+		set_country_flag = ROM_allow_decision_cappie
+	}
+	option = {
+		ai_chance = {
+			factor = 5
+		}
+		name = "Commie Option not Implemented"
+		add_stability = -1
+		add_war_support = -1
+		add_manpower = 100000000
+	}
+}

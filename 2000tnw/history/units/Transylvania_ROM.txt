@@ -1,0 +1,8 @@
+units = {
+	division = {
+		name = "Mari Milițiile din România"
+		location = 6711	
+		division_template = "Armata de Eliberare a Muncitorilor din România Mare"
+		start_experience_factor = 0.3
+	}
+}
